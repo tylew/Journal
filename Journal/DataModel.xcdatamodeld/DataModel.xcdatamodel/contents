@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CDContentBlock" representedClassName="CDContentBlock" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id_" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastModifiedDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="note_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDNote" inverseName="contentBlocks_" inverseEntity="CDNote"/>
+    </entity>
+    <entity name="CDNote" representedClassName="CDNote" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id_" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastModifiedDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title_" optional="YES" attributeType="String"/>
+        <relationship name="contentBlocks_" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="CDContentBlock" inverseName="note_" inverseEntity="CDContentBlock"/>
+    </entity>
+    <entity name="CDTextBlock" representedClassName="CDTextBlock" parentEntity="CDContentBlock" syncable="YES" codeGenerationType="class">
+        <attribute name="text_" optional="YES" attributeType="String"/>
+    </entity>
+</model>

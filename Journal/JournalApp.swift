@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct JournalApp: App {
+    let persistenceController = PersistentController.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewNote()
         }
     }
 }
