@@ -11,6 +11,10 @@ import CoreData
 
 extension CDNote {
     
+    /*
+     CDNote Entity Properties
+     */
+    
     public var id: UUID {
         get {
             id_ ?? UUID()
@@ -37,12 +41,30 @@ extension CDNote {
         set { lastModifiedDate_ = newValue }
     }
 
-    // Handling the contentBlocks relationship
-    var contentBlocks: NSOrderedSet {
-            get {
-                contentBlocks_ ?? NSOrderedSet()
-            }
+    /*
+     CDNote Replationship Properties
+     */
+    var contentBlocks: [CDContentBlock] {
+        get {
+            (contentBlocks_)?.array as? [CDContentBlock] ?? []
         }
+        set {
+                    let orderedSet = NSOrderedSet(array: newValue)
+                    self.contentBlocks_ = orderedSet
+                    updateLastModifiedDate()  // Assuming you want to track modifications
+                }
+    }
+    
+    /*
+     CDNote Computed Properties
+     */
+    var contentBlocksCount: Int {
+        return contentBlocks.count
+    }
+    
+    /*
+     CDNote extended functions
+     */
     
     // Add a content block to the note
     func addContentBlock(_ block: CDContentBlock) {
@@ -68,6 +90,17 @@ extension CDNote {
         mutableOrderedSetValue(forKey: "contentBlocks_").removeObject(at: blockIndex)
         updateLastModifiedDate()
     }
+    
+    // Remove content blocks based on an IndexSet
+    func removeContentBlocks(at indices: IndexSet) {
+        let orderedSet = mutableOrderedSetValue(forKey: "contentBlocks_")
+        // Process the IndexSet in reverse order to avoid shifting indices after a removal
+        indices.sorted(by: >).forEach { index in
+            orderedSet.removeObject(at: index)
+        }
+        updateLastModifiedDate()
+    }
+
     
     // Remove a content block by id
     func removeContentBlock(byId blockId: UUID) {
@@ -103,7 +136,9 @@ extension CDNote {
 
     override public func awakeFromInsert() {
         super.awakeFromInsert()
+        self.title_ = ""
         self.creationDate_ = Date()
+        self.lastModifiedDate_ = self.creationDate
         self.id_ = UUID()
     }
 }

@@ -13,7 +13,10 @@ struct JournalApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NewNote()
+//            NoteNavigationView()
+//                .environment(\.managedObjectContext, persistenceController.viewContext.)
+            
+            NoteNavigationView().environment(\.managedObjectContext, persistenceController.noteContainer.viewContext)
         }
     }
 }

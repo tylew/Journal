@@ -59,6 +59,14 @@ struct PersistentController {
         let note2 = CDNote(context: viewContext)
         note2.title = "Second Note"
         
+        let textBlock1 = CDTextBlock(context: viewContext, note: note1)
+        textBlock1.text = "text block 1"
+        let textBlock11 = CDTextBlock(context: viewContext, note: note1)
+        textBlock11.text = "text block 11"
+        
+        let textBlock2 = CDTextBlock(context: viewContext, note: note2)
+        textBlock2.text = "text block 2"
+        
         do {
             try viewContext.save()
         } catch {
@@ -67,6 +75,6 @@ struct PersistentController {
         }
         return controller
     }()
- 
+    
 #endif
 }

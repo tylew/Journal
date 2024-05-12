@@ -43,7 +43,7 @@ struct NewNote: View {
             }
             .frame(maxHeight: .infinity)
             
-            Menu()
+//            NoteDetailMenu()
             // Additional UI elements could be conditionally shown based on the state
             if !isLocked {
                 Text("Unlocked!")
@@ -60,69 +60,6 @@ struct NewNote: View {
     }
 }
 
-struct Menu: View {
-    var body: some View {
-        HStack(spacing: 15) {  // Spacing between buttons
-            Button(action: {
-                print("Delete entry")
-            }) {
-                HStack(spacing: 4) {
-                    Image(systemName: "plus.circle.fill")
-                        
-                    .font(.system(size: 24)).rotationEffect(Angle(degrees: 45))
-                    Text("Exit").font(.system(size: 15))
-                }.foregroundColor(.red)
-            }
-            Spacer()
-            // Button for adding a new entry
-            Button(action: {
-                print("Add new entry")
-            }) {
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.blue)
-                    .font(.system(size: 24))
-            }
-
-            // Button for saving an entry
-            Button(action: {
-                print("Picture")
-            }) {
-                Image(systemName: "photo")
-                    .foregroundColor(.green)
-                    .font(.system(size: 24))
-            }
-            
-
-            // Button for sharing an entry
-            Button(action: {
-                print("Share entry")
-            }) {
-                Image(systemName: "link")
-                    .foregroundColor(.purple)
-                    .font(.system(size: 24))
-            }
-
-            // Button for searching within the journal
-//            Button(action: {
-//                print("Search entries")
-//            }) {
-//                Image(systemName: "magnifyingglass")
-//                    .foregroundColor(.red)
-//                    .font(.system(size: 24))
-//            }
-
-            // Button for settings or more options
-            Button(action: {
-                print("Open settings")
-            }) {
-                Image(systemName: "slider.horizontal.3")
-                    .foregroundColor(.orange)
-                    .font(.system(size: 24))
-            }
-        }
-        .padding(3)  // Padding around the HStack
-    }
-}
 
 #Preview {
     NewNote()

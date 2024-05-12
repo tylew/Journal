@@ -26,4 +26,16 @@ extension CDTextBlock {
         self.text_ = ""
     }
     
+    // CDTextBlock-specific initializer
+    convenience init(context: NSManagedObjectContext, note: CDNote) {
+        
+        let entityName = String(describing: CDTextBlock.self)
+        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
+            fatalError("No entity found with name \(entityName)")
+        }
+        self.init(entity: entity, insertInto: context)
+        
+        self.note_ = note
+        note.addContentBlock(self)
+    }
 }

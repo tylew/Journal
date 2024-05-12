@@ -49,14 +49,7 @@ extension CDContentBlock {
         creationDate_ = Date()  // Set the current date when the object is first inserted
     }
     
-    convenience init(context: NSManagedObjectContext, note: CDNote) {
-        let entityName = String(describing: CDContentBlock.self)
-        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
-            fatalError("No entity found with name \(entityName)")
-        }
-        self.init(entity: entity, insertInto: context)
-        self.note_ = note
-    }
+    
 }
 
 //extension CDContentBlock : Identifiable {
