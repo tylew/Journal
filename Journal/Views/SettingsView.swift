@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-
+// App settings view
 struct SettingsView: View {
     @AppStorage("userName") private var userName: String = ""
     @AppStorage("userBio") private var userBio: String = ""
     @AppStorage("appearanceMode") private var appearanceMode: String = AppearanceMode.system.rawValue
-    
+//    Programatic focus of bio field, because real textField is too small
     @FocusState private var bioFieldFocused: Bool
     let characterLimit = 100
 

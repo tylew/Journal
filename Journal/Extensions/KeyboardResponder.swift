@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+// Invoke this class to track notifications of keyboard activations
 class KeyboardResponder: ObservableObject {
     @Published var keyboardHeight: CGFloat = 0
     private var cancellables = Set<AnyCancellable>()

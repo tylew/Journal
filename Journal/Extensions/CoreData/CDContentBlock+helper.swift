@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// Implement CDContrneBlock functions
 extension CDContentBlock {
     // UUID of the content block
     public var id: UUID {

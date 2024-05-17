@@ -1,12 +1,13 @@
 //
-//  DraggingComponent.swift
-//  Journal
+// 21/06/2022
 //
-//  Created by Tyler Lewis on 5/3/24.
-//
+// Created by: Valerie Abelovska
+// Copyright © GoodRequest s.r.o. All rights reserved.
+
 import SwiftUI
 import CoreHaptics
 
+// Not used in final deploy, this is adapted from internet
 public struct DraggingComponent: View {
     @Binding var isLocked: Bool
     let isLoading: Bool

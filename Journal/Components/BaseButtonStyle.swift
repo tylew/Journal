@@ -1,11 +1,4 @@
 //
-//  BaseButtonStyle.swift
-//  Journal
-//
-//  Created by Tyler Lewis on 5/3/24.
-//
-
-//
 // 21/06/2022
 //
 // Created by: Valerie Abelovska
@@ -13,6 +6,7 @@
 
 import SwiftUI
 
+// For @DraggingComponent
 public struct BaseButtonStyle: ButtonStyle {
 
     public init() { }

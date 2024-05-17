@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+// Display note overview in row
 struct NoteRow: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var note: CDNote

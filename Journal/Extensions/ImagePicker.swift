@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+// Bottom sheet for controlling an image picker
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     @Binding var imageData: Data?

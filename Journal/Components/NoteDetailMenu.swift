@@ -8,6 +8,7 @@
 import SwiftUI
 import Photos
 
+// Display the menu of buttons to interact with notes
 struct NoteDetailMenu: View {
     @ObservedObject private var keyboard = KeyboardResponder()
     

@@ -20,13 +20,12 @@
 		6B7672672BE4AC48001AB8EA /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7672662BE4AC48001AB8EA /* JournalTests.swift */; };
 		6B7672712BE4AC48001AB8EA /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7672702BE4AC48001AB8EA /* JournalUITests.swift */; };
 		6B7672732BE4AC48001AB8EA /* JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7672722BE4AC48001AB8EA /* JournalUITestsLaunchTests.swift */; };
-		6B9272102BE4BC0C00714182 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92720F2BE4BC0C00714182 /* HomeView.swift */; };
+		6B9272102BE4BC0C00714182 /* NoteNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92720F2BE4BC0C00714182 /* NoteNavigationView.swift */; };
 		6B9272122BE4BE8C00714182 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9272112BE4BE8C00714182 /* NewNoteView.swift */; };
 		6B9272152BE4C04A00714182 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9272142BE4C04A00714182 /* Color.swift */; };
 		6B9272172BE4D93900714182 /* swipe to unlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9272162BE4D93900714182 /* swipe to unlock.swift */; };
 		6B92721A2BE4D9C400714182 /* DraggingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9272192BE4D9C400714182 /* DraggingComponent.swift */; };
 		6B92721C2BE4DA0A00714182 /* BaseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92721B2BE4DA0A00714182 /* BaseButtonStyle.swift */; };
-		6B92721E2BE4DA2700714182 /* BackgroundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92721D2BE4DA2700714182 /* BackgroundComponent.swift */; };
 		6B9272212BE4EA9A00714182 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B92721F2BE4EA9A00714182 /* DataModel.xcdatamodeld */; };
 		6BB62BAE2BEDEC57005CFE88 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB62BAD2BEDEC57005CFE88 /* NoteDetailView.swift */; };
 		6BB62BB02BF01560005CFE88 /* NoteDetailMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB62BAF2BF01560005CFE88 /* NoteDetailMenu.swift */; };
@@ -72,13 +71,12 @@
 		6B76726C2BE4AC48001AB8EA /* JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7672702BE4AC48001AB8EA /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		6B7672722BE4AC48001AB8EA /* JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6B92720F2BE4BC0C00714182 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6B92720F2BE4BC0C00714182 /* NoteNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNavigationView.swift; sourceTree = "<group>"; };
 		6B9272112BE4BE8C00714182 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
 		6B9272142BE4C04A00714182 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6B9272162BE4D93900714182 /* swipe to unlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swipe to unlock.swift"; sourceTree = "<group>"; };
 		6B9272192BE4D9C400714182 /* DraggingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingComponent.swift; sourceTree = "<group>"; };
 		6B92721B2BE4DA0A00714182 /* BaseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonStyle.swift; sourceTree = "<group>"; };
-		6B92721D2BE4DA2700714182 /* BackgroundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundComponent.swift; sourceTree = "<group>"; };
 		6B9272202BE4EA9A00714182 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6BB62BAD2BEDEC57005CFE88 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		6BB62BAF2BF01560005CFE88 /* NoteDetailMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailMenu.swift; sourceTree = "<group>"; };
@@ -196,7 +194,7 @@
 			children = (
 				6BB62BAD2BEDEC57005CFE88 /* NoteDetailView.swift */,
 				6BFDF5572BE4B4260004AD10 /* WelcomeView.swift */,
-				6B92720F2BE4BC0C00714182 /* HomeView.swift */,
+				6B92720F2BE4BC0C00714182 /* NoteNavigationView.swift */,
 				6B9272112BE4BE8C00714182 /* NewNoteView.swift */,
 				6BEE83672BF5E4AA003F3E16 /* SettingsView.swift */,
 			);
@@ -220,7 +218,6 @@
 			children = (
 				6B9272192BE4D9C400714182 /* DraggingComponent.swift */,
 				6B92721B2BE4DA0A00714182 /* BaseButtonStyle.swift */,
-				6B92721D2BE4DA2700714182 /* BackgroundComponent.swift */,
 				6B509CE62BE5E24B00FB7FB2 /* NoteRow.swift */,
 				6BB62BAF2BF01560005CFE88 /* NoteDetailMenu.swift */,
 			);
@@ -359,12 +356,11 @@
 			files = (
 				6B9272212BE4EA9A00714182 /* DataModel.xcdatamodeld in Sources */,
 				6B92721A2BE4D9C400714182 /* DraggingComponent.swift in Sources */,
-				6B92721E2BE4DA2700714182 /* BackgroundComponent.swift in Sources */,
 				6BEE836C2BF60060003F3E16 /* KeyboardResponder.swift in Sources */,
 				6B9272172BE4D93900714182 /* swipe to unlock.swift in Sources */,
 				6B7672582BE4AC47001AB8EA /* ContentView.swift in Sources */,
 				6BEE83682BF5E4AA003F3E16 /* SettingsView.swift in Sources */,
-				6B9272102BE4BC0C00714182 /* HomeView.swift in Sources */,
+				6B9272102BE4BC0C00714182 /* NoteNavigationView.swift in Sources */,
 				6B509CE72BE5E24B00FB7FB2 /* NoteRow.swift in Sources */,
 				6BB62BB02BF01560005CFE88 /* NoteDetailMenu.swift in Sources */,
 				6B9272122BE4BE8C00714182 /* NewNoteView.swift in Sources */,

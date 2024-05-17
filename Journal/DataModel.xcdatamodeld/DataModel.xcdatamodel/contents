@@ -19,4 +19,7 @@
     <entity name="CDTextBlock" representedClassName="CDTextBlock" parentEntity="CDContentBlock" syncable="YES" codeGenerationType="class">
         <attribute name="text_" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="CDUrlBlock" representedClassName="CDUrlBlock" parentEntity="CDContentBlock" syncable="YES" codeGenerationType="class">
+        <attribute name="url_" optional="YES" attributeType="String"/>
+    </entity>
 </model>

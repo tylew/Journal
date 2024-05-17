@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Unused in production app
 struct NewNote: View {
     @State private var title = ""
     @State private var content = ""

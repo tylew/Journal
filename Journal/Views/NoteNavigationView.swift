@@ -8,15 +8,18 @@
 import SwiftUI
 import CoreData
 
-
+// Home page for journaling app, provide navigation to note containers
 struct NoteNavigationView: View {
-    
+//   viewContext derived from @persistentController within @root
     @Environment(\.managedObjectContext) var viewContext
     @State private var notes: [CDNote] = []
+    @State private var newNote: CDNote?
+//    Listening to these Bools to handle navigation to new views
     @State private var navigateToNewNote = false
     @State private var showingSettings = false
-    @State private var newNote: CDNote?
     
+    
+//    Load all notes, future improvment would want to potentially pagnate
     private func loadNotes() {
         let fetchRequest: NSFetchRequest<CDNote> = CDNote.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CDNote.creationDate_, ascending: true)]
@@ -28,9 +31,9 @@ struct NoteNavigationView: View {
         }
     }
     
+//    Handle logic for creating new CDNote + navigating to NoteView
     private func addNote() {
         let newNote = CDNote(context: viewContext)
-//        newNote.title = "New Note"
         do {
             try viewContext.save()
             notes.append(newNote)
@@ -43,6 +46,7 @@ struct NoteNavigationView: View {
         }
     }
 
+//    Delete CDNotes by indexSet
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { notes[$0] }.forEach(viewContext.delete)
@@ -57,6 +61,7 @@ struct NoteNavigationView: View {
         }
     }
     
+//    Display body
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -64,10 +69,12 @@ struct NoteNavigationView: View {
                     .padding(.vertical, 5) // Adds padding vertically
                     .padding(.horizontal, 20) // Adds padding horizontally for wider appearance
                     .background(Color.appPurple.opacity(0.2)) // Sets the background color
-                    .foregroundColor(.blueDark) // Sets the text color
+                    .foregroundColor(.appPurple) // Sets the text color
                     .clipShape(Capsule()) // Creates the pill shape
                     .padding(.bottom, 5)
+                
                 Divider().frame(minHeight: 1).overlay(Color.appPurple.opacity(0.5))
+                
                 List {
                     ForEach(notes, id: \.self) { note in
                         ZStack {
@@ -81,9 +88,8 @@ struct NoteNavigationView: View {
                 }
                 .listStyle(PlainListStyle())
                 
-//                .background(Color.gray.opacity(0.2))
-                
                 Divider().frame(minHeight: 1).overlay(Color.appPurple.opacity(0.5)).padding(0)
+                
                 Button("Add Note") {
                     addNote()
                 }
@@ -102,7 +108,7 @@ struct NoteNavigationView: View {
                                 }) {
                                     Image(systemName: "gear")
                                 }
-//                                trailing: EditButton()
+//                                trailing: EditButton()  ** Giving odd behavior
                             )
                 .navigationDestination(isPresented: $navigateToNewNote) {
                     // Safely unwrap newNote, or provide a fallback view

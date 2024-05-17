@@ -9,6 +9,7 @@ import Foundation
 import Foundation
 import CoreData
 
+// Extend funcitonality of CDNote
 extension CDNote {
     
     /*
