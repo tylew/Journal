@@ -133,6 +133,8 @@ extension CDNote {
             self.lastModifiedDate_ = Date()
         }
     }
+    
+    
 
     override public func awakeFromInsert() {
         super.awakeFromInsert()
@@ -141,5 +143,13 @@ extension CDNote {
         self.lastModifiedDate_ = self.creationDate
         self.id_ = UUID()
     }
+    
+    public override func willSave() {
+            super.willSave()
+
+            if self.isDeleted {
+                print("CDContentBlock object with ID \(self.objectID) is about to be deleted.")
+            }
+        }
 }
 

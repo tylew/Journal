@@ -6,6 +6,9 @@
         <attribute name="lastModifiedDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="note_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDNote" inverseName="contentBlocks_" inverseEntity="CDNote"/>
     </entity>
+    <entity name="CDImageBlock" representedClassName="CDImageBlock" parentEntity="CDContentBlock" syncable="YES" codeGenerationType="class">
+        <attribute name="imageData_" optional="YES" attributeType="Binary"/>
+    </entity>
     <entity name="CDNote" representedClassName="CDNote" syncable="YES" codeGenerationType="class">
         <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id_" attributeType="UUID" usesScalarValueType="NO"/>

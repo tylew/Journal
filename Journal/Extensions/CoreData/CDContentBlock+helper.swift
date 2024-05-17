@@ -49,11 +49,12 @@ extension CDContentBlock {
         creationDate_ = Date()  // Set the current date when the object is first inserted
     }
     
+    public override func willSave() {
+            super.willSave()
+
+            if self.isDeleted {
+                print("CDContentBlock object with ID \(self.objectID) is about to be deleted.")
+            }
+        }
     
 }
-
-//extension CDContentBlock : Identifiable {
-//    public var id: UUID {  // Make sure the type of 'id' matches what's expected in your use case
-//          return self.id_  // Assuming 'uuidProperty' is the actual property in MyEntity
-//       }
-//}
